@@ -23,7 +23,7 @@ export const getUsersByPage = async () => {
 
 export const updateFollowersApi = async (id, body) => {
     try {
-        const result = await axios.put(`/users/${id}`, body)
+        const result = await axios.put(`/users/${id}`, body);
         return result.data
     } catch (e) {
         return Promise.reject(e.message)

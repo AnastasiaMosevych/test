@@ -1,7 +1,7 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 // import * as usersAPI from '../api/usersAPI';
 // import { toast } from "react-toastify";
-import { getUsersThunk } from './operations';
+import { getUsersThunk, updateFollowersThunk } from './operations';
 
 const initialState = {
     users: [],
@@ -13,6 +13,14 @@ const initialState = {
 
 const handlePending = (state, { payload }) => {
     state.isLoading = true
+}
+
+const handleFulfilledFollowers = (state, { payload }) => {
+    const index = state.users.findIndex(
+        user => user.id === payload.id
+    )
+    state.users[index].followers = payload.followers
+
 }
 
 const handleFulfilled = (state, { payload }) => {
@@ -48,8 +56,9 @@ const UsersSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getUsersThunk.fulfilled, handleFulfilled)
-            .addMatcher(isAnyOf(getUsersThunk.pending), handlePending)
-            .addMatcher(isAnyOf(getUsersThunk.rejected, handleRejected))
+            .addCase(updateFollowersThunk.fulfilled, handleFulfilledFollowers)
+            .addMatcher(isAnyOf(getUsersThunk.pending, updateFollowersThunk.pending), handlePending)
+            .addMatcher(isAnyOf(getUsersThunk.rejected, updateFollowersThunk.rejected), handleRejected)
         
     }
 })

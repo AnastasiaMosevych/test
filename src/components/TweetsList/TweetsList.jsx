@@ -11,7 +11,6 @@ export const TweetsList = () => {
         <Section>
             <ListContainer>
                 <List>
-                    
                     {users && users.map((user => (
                         <li key={user.id}>
                             <TweetsCard

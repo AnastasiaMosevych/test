@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 export const TweetsCard = ({ avatar, tweets, followers, id }) => {
     const dispatch = useDispatch();
     const handleOnClick = () => {
-        dispatch(updateFollowersThunk(id));
+        dispatch(updateFollowersThunk({ id: id, followers: followers }));
     }
     return (
         <Article>

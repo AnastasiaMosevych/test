@@ -10,10 +10,10 @@ export const getUsersThunk = createAsyncThunk('users/fetchAll', async (_, thunkA
     }
 });
 
-export const updateFollowersThunk = createAsyncThunk('users/id', async (id, thunkAPI) => {
+export const updateFollowersThunk = createAsyncThunk('users/id', async(userInfo, thunkAPI) => {
     try {
-        const body = { followers: 33 }
-        const response = await mockapi.updateFollowersApi(id, body);
+        const body = { followers: userInfo.followers + 1 };
+        const response = await mockapi.updateFollowersApi(userInfo.id, body);
         return response;
     } catch (e) {
         return thunkAPI.rejectWithValue(e.message);

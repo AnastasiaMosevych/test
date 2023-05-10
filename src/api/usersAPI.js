@@ -6,13 +6,12 @@ export const getUsersApi = async () => {
     try {
         const result = await axios.get('/users')
         return result.data
-        
     } catch (e) {
         return Promise.reject(e.message)
     }
 }
 
-export const getUsersByPage = async () => {
+export const getUsersByPageApi = async () => {
     try {
         const result = await axios.get()
         return result

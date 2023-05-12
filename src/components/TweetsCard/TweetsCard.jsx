@@ -3,11 +3,11 @@ import logo from "../../images/logo.svg";
 import { updateFollowersThunk } from "../../redux/operations";
 import { useDispatch } from "react-redux";
 // import { addSubscription, deleteSubscription } from "../../redux/subscriptionSlice";
-import { useState } from "react";
+// import { useState } from "react";
 
 export const TweetsCard = ({ user, avatar, tweets, followers, id }) => {
     const dispatch = useDispatch();
-    const [isFollowing] = useState(false);
+    // const [isFollowing] = useState(false);
     // , setIsFollowing] 
     const handleOnClick = () => {
         // if (isFollowing) {

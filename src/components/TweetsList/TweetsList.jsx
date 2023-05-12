@@ -4,7 +4,7 @@ import { TweetsCard } from "../TweetsCard/TweetsCard";
 import { useUsers } from "../../Hook/useUsers";
 
 export const TweetsList = () => {
-    const { users} = useUsers();
+    const { users } = useUsers(); 
     return (
         <Section>
             <ListContainer>

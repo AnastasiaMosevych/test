@@ -17,3 +17,7 @@ export const selectPage = state => {
 export const selectLoadMore = state => {
     return state.users.loadMore;
 }
+
+export const selectSubscription = state => {
+    return state.subscription.users;
+}

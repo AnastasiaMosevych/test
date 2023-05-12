@@ -24,16 +24,14 @@ const handleFulfilledFollowers = (state, { payload }) => {
 }
 
 const handleFulfilled = (state, { payload }) => {
-    state.users = payload
-    state.isLoading = false
-    state.isUpdating = false
-
-    if (payload.length === 3) {
-        state.isLoading = true
-    } else {
+    if (!(JSON.stringify(state.users) === JSON.stringify(payload))) {
+        // add users to state only if they are not in state already
+        state.users = state.users.concat(payload)
+        state.page += 1
         state.isLoading = false
     }
-    state.isLoading = false
+    state.isUpdating = false
+    
 }
 
 const handleRejected = (state, action) => {
@@ -59,7 +57,6 @@ const UsersSlice = createSlice({
             .addCase(updateFollowersThunk.fulfilled, handleFulfilledFollowers)
             .addMatcher(isAnyOf(getUsersThunk.pending, updateFollowersThunk.pending), handlePending)
             .addMatcher(isAnyOf(getUsersThunk.rejected, updateFollowersThunk.rejected), handleRejected)
-        
     }
 })
 

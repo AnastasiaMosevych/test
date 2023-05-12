@@ -5,14 +5,8 @@ import { Hearts } from "react-loader-spinner";
 import HomePage from "../pages/HomePage/HomePage";
 import TweetsPage from "../pages/TweetsPage/TweetsPage";
 import NotFound from "../pages/NotFound/NotFound";
-import { useDispatch } from "react-redux";
-import { getUsersThunk } from "../redux/operations";
 
 const App = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getUsersThunk())
-  }, [dispatch])
   return (
     <div>
       <Routes>

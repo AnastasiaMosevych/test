@@ -1,11 +1,11 @@
 import * as mockapi from '../api/usersAPI';
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getUsersThunk = createAsyncThunk('users/fetchAll', async (_, thunkAPI) => {
-  try {
-      const response = await mockapi.getUsersApi();
-      return response;
-  } catch (e) {
+export const getUsersThunk = createAsyncThunk('users/getpaginated', async (page, thunkAPI) => {
+    try {
+        const response = await mockapi.getUsersAPI(page);
+        return response;
+    } catch (e) {
         return thunkAPI.rejectWithValue(e.message);
     }
 });

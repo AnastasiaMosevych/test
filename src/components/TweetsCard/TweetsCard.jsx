@@ -7,7 +7,8 @@ import { useState } from "react";
 
 export const TweetsCard = ({ user, avatar, tweets, followers, id }) => {
     const dispatch = useDispatch();
-    const [isFollowing, setIsFollowing] = useState(false);
+    const [isFollowing] = useState(false);
+    // , setIsFollowing] 
     const handleOnClick = () => {
         if (isFollowing) {
             dispatch(deleteSubscription());

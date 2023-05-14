@@ -19,5 +19,5 @@ export const selectLoadMore = state => {
 }
 
 export const selectSubscription = state => {
-    return state.subscription.users;
+    return state.subscription.subscribedUsers;
 }

@@ -1,6 +1,5 @@
 import { List, ListContainer, Section } from "./TweetsList.styled";
 import { TweetsCard } from "../TweetsCard/TweetsCard";
-// import { useDispatch } from "react-redux";
 import { useUsers } from "../../Hook/useUsers";
 
 export const TweetsList = () => {

@@ -1,5 +1,4 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-// import * as usersAPI from '../api/usersAPI';
 // import { toast } from "react-toastify";
 import { getUsersThunk, updateFollowersThunk } from './operations';
 

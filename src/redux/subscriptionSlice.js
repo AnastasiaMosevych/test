@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  users: [],
+  subscribedUsers: [],
 };
 
 const SubscriptionSlice = createSlice({
@@ -9,12 +9,14 @@ const SubscriptionSlice = createSlice({
   initialState,
   reducers: {
     addSubscription: (state, { payload }) => {
-      state.users = [...state.users, payload];
+      state.subscribedUsers.push(payload);
     },
     deleteSubscription: (state, { payload }) => {
-      const users = [...state.users];
-      users.splice(payload, 1);
-      state.users = [...users];
+      const idToDelete = (element) => element === payload;
+      const index = state.subscribedUsers.findIndex(
+        idToDelete
+      );
+      state.subscribedUsers.splice(index, 1);
     },
   },
 });

@@ -9,7 +9,7 @@ const SubscriptionSlice = createSlice({
   initialState,
   reducers: {
     addSubscription: (state, { payload }) => {
-      state.subscribedUsers.push(payload);
+      state.subscribedUsers = [...state.subscribedUsers, payload];
     },
     deleteSubscription: (state, { payload }) => {
       const idToDelete = (element) => element === payload;

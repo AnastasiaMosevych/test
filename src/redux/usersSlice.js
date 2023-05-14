@@ -30,7 +30,6 @@ const handleFulfilled = (state, { payload }) => {
         state.isLoading = false
     }
     state.isUpdating = false
-    
 }
 
 const handleRejected = (state, action) => {

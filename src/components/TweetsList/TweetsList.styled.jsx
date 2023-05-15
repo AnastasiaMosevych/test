@@ -13,8 +13,11 @@ export const ListContainer = styled.div`
 export const List = styled.ul`
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 6px;
     list-style: none;
+    padding: 0;
+    margin: 0;
 `
 
 export const ListItem = styled.li`

@@ -19,9 +19,7 @@ export const TweetsCard = ({ user, avatar, tweets, followers, id }) => {
     }
         return (
             <Article>
-                <div>
-                    <img src={logo} alt="logo of go-it school" />
-                </div>
+                <img src={logo} alt="logo of go-it school" />
                 <AvatarDiv>
                     <div>
                         <UserAvatar src={avatar} alt={user} />

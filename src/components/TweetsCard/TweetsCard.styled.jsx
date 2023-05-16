@@ -5,7 +5,6 @@ export const Article = styled.article`
     width: 380px;
     height: 460px;
     position: relative;
-    padding: 28px 36px;
     background: url("${background}"), linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
     background-repeat: no-repeat;
     background-position: top center;
@@ -15,8 +14,7 @@ export const Article = styled.article`
         content: "";
         position: absolute;
         top: 50%;
-        left: 10%;
-        right: 0;
+        left: 0;
         width: 380px;
         height: 8px;
         background: #EBD8FF;
@@ -25,13 +23,19 @@ export const Article = styled.article`
     }  
 `
 
+export const Logo = styled.img`
+    margin-top: 20px;
+    margin-left: 20px;
+`
+
 export const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 36px;
+    bottom: 40px;
+    left: 30px;
     width: calc(100% - 72px);
     height: calc(50% - 98px);
 `

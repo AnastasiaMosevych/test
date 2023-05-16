@@ -1,4 +1,4 @@
-import { Article, UserAvatar, ToSubscribeButton, SubscribedButton, Text, Followers, TextContainer, AvatarDiv } from "./TweetsCard.styled";
+import { Article, Logo, UserAvatar, ToSubscribeButton, SubscribedButton, Text, Followers, TextContainer, AvatarDiv } from "./TweetsCard.styled";
 import logo from "../../images/logo.svg";
 import { updateFollowersThunk } from "../../redux/operations";
 import { useDispatch } from "react-redux";
@@ -19,7 +19,7 @@ export const TweetsCard = ({ user, avatar, tweets, followers, id }) => {
     }
         return (
             <Article>
-                <img src={logo} alt="logo of go-it school" />
+                <Logo src={logo} alt="logo of go-it school" />
                 <AvatarDiv>
                     <div>
                         <UserAvatar src={avatar} alt={user} />
